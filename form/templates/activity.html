@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='activity.css') }}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="back-button">← Modify your booking</a>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="details-card">
+                <div class="details-header">
+                    <h2><span class="circle-number">1</span> Your details</h2>
+                    <a href="#" class="modify-button">Modify</a>
+                </div>
+                <div class="user-details">
+                    <p id="user-info">{{ user.name }} | {{ user.email }} | {{ user.phone }}</p>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <h2>Choose payment method</h2>
+                <p style="margin: 10px 0;">🛡️ 100% safe and secure payments</p>
+                
+                <div class="payment-option" id="pay-hotel">
+                    <h3>Pay At Hotel</h3>
+                </div>
+                
+                <div class="payment-option" id="payNow">Pay Now</div>
+
+                <a href="{{url_for('upi')}}"><button class="book">Pay with UPI</button></a>
+                <a href="{{url_for('payment')}}"><button class="book">Pay with Card</button></a>
+
+                
+                <div id="payment-details" style="display: none;">
+                    <p>UPI ID: <strong id="upi-id"></strong></p>
+                    <img id="qr-code" src="" alt="QR Code" width="150">
+                </div>
+
+            </div>
+        </main>
+
+        <aside class="hotel-card">
+            <h2>{{ booking.hotel_name }}</h2>
+            <p>{{ booking.address }}</p>
+            <div class="rating">{{ booking.rating }}</div>
+            <p>{{ booking.stay_details }}</p>
+
+            <div class="price-breakdown">
+                {% for key, value in booking.price_breakdown.items() %}
+                <div class="price-row">
+                    <span>{{ key.replace("_", " ").title() }}</span>
+                    <span>₹{{ value }}</span>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="social-proof">
+                ⚡ 6 people booked this hotel in last 6 hours
+            </div>
+        </aside>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/activity.js') }}"></script>
+</body>
+</html>

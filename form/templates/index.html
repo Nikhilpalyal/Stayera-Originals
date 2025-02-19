@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  {%extends "base.html"%}
+  {%block content%}
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Find Your Home Away From Home.</h1>
+        <p class="hero-subtitle">Introducing Stayera: A New Vision of Hospitality.</p>
+        <a href="{{url_for('form')}}" class="cta-button">Discover More</a>
+    </div>
+</section>
+
+<div class="services-container">
+    <div class="service-cardss">
+        <img src="{{ url_for('static', filename='image/service.png') }}" alt="Full Service Icon">
+        <h3>Full Service</h3>
+        <p class="service-text">You can count on us for all your accommodation, dining, and travel needs to create the best experience.</p>
+    </div>
+    <div class="service-cardss">
+        <img src="{{ url_for('static', filename='image/Deliver.png') }}" alt="Deliver Value Icon">
+        <h3>Deliver Value</h3>
+        <p class="service-text">We deliver exceptional value by offering top-notch services at competitive prices.</p>
+    </div>
+    <div class="service-cardss">
+        <img src="{{ url_for('static', filename='image/service.png') }}" alt="Partners Icon">
+        <h3>Partners</h3>
+        <p class="service-text">Through partnerships with top brands, we ensure excellent services and unforgettable experiences.</p>
+    </div>
+    <div class="service-cardss">and
+        <img src="{{ url_for('static', filename='image/Integrity.png') }}" alt="Integrity Icon">
+        <h3>Integrity</h3>
+        <p class="service-text">Our commitment to honesty, transparency, and professionalism ensures your satisfaction.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-section">
+        <h3>WELCOME</h3>
+        <h1><b>StayEra</b></h1>
+        <p>Experience comfort and luxury like never before. At Stayera, we offer world-class accommodations, top-notch hospitality, and seamless booking experiences. Whether you're traveling for business or leisure, we ensure a stay that's both relaxing and memorable.
+
+            Book your stay today and enjoy premium services, breathtaking views, and personalized comfort tailored to your needs. Your perfect getaway starts here!
+            
+            Discover elegance. Experience Stayera.
+            </p>
+        <button><a herf="{{url_for('form')}}">ABOUT US</a></button>
+    </div>
+    <div class="image-section">
+        <img src="{{ url_for('static', filename='/image/hotel4.jpg') }}" alt="Hotel Image">
+    </div>
+</div>
+
+<section class="about">
+    <div class="experience">
+        <h2>{{ about.experience }}</h2>
+        <p>Years <br> experience <br> working</p>
+    </div>
+    <div class="content">
+        <h1>{{ about.title }}</h1>
+    </div>
+    <div class="content1">
+        <p>{{ about.description }}</p>
+        <button class="read-more"><a href="{{url_for('form')}}">Know More</a></button>
+    </div>
+</section>
+
+<section class="collections">
+    {% for collection in collections %}
+    <div class="collection">
+        <img src="{{ url_for('static', filename=collection.image) }}" alt="{{ collection.title }}">
+
+        <h3>{{ collection.title }}</h3>
+    </div>
+    {% endfor %}
+</section>
+<div class="services-container">
+    <h1 class="services-title">SERVICES</h1>
+    
+    <div class="services-grid">
+        {% for service in services %}
+        <div class="service-card">
+            <div class="service-icon">
+                <i class="fas fa-{{ service.icon }}"></i>
+            </div>
+            <h2 class="service-title">{{ service.title }}</h2>
+            <p class="service-description">
+                {{ service.description }}
+            </p>
+            <a href="#" class="know-more-btn">Know More</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+  
+{%endblock%}
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stayera</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="#" class="brand-logo">
+                <img src="{{ url_for('static', filename='image/Stayera.png') }}" alt="Stayera Logo" class="logo">
+            </a>
+            <a href="#" class="dropdown">Shop Travel &#9662;</a>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('home') }}" class="hovered">Home</a></li>
+                <li><a href="{{url_for('hotels') }}" class="hovered"> Hotels</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle"><i class="fas fa-globe"></i> English</a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#spanish">Spanish</a></li>
+                      <li><a href="#french">French</a></li>
+                      <li><a href="#german">German</a></li>
+                      <li><a href="#korean">Korean</a></li>
+                  </ul>
+              </li>
+              <li><a href="{{url_for('about')}}" class="hovered"><i class="fa-regular fa-user"></i> About Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Explore More</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{url_for('contact')}}" class="hovered">Contact Us</a></li>
+                <li><a href="{{url_for('form')}}" class="hovered">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Enjoy your Dream Vacation</h1>
+        <p>Book Hotels, Flights, and Stay packages at the lowest price</p>
+    </div>
+    <div class="search-box">
+        <div class="search-item">
+            <label>Location</label>
+            <input type="text" placeholder="Where are you going?">
+        </div>
+        <div class="search-item">
+            <label>Check in</label>
+            <input type="date">
+        </div>
+        <div class="search-item">
+            <label>Check out</label>
+            <input type="date">
+        </div>
+        <div class="search-item">
+            <label>Guests</label>
+            <input type="number" placeholder="Add guests">
+        </div>
+        <button class="search-button"><i class="fas fa-search"></i></button>
+    </div>
+</div>
+{% endblock %}
+
+    <div class="footer">
+        <div class="section">
+          <div class="links">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Coronavirus (COVID-19) FAQs</a></li>
+              <li><a href="#">Manage your trips</a></li>
+              <li><a href="#">Contact Customer Service</a></li>
+              <li><a href="#">Safety Resource Center</a></li>
+            </ul>
+          </div>
+          <div class="links">
+            <h4>Discover</h4>
+            <ul>
+              <li><a href="#">Genius loyalty program</a></li>
+              <li><a href="#">Seasonal and holiday deals</a></li>
+              <li><a href="#">Travel articles</a></li>
+              <li><a href="#">Booking.com for Business</a></li>
+            </ul>
+          </div>
+          <div class="links">
+            <h4>Terms and settings</h4>
+            <ul>
+              <li><a href="#">Privacy & cookies</a></li>
+              <li><a href="#">Terms & conditions</a></li>
+              <li><a href="#">Grievance officer</a></li>
+              <li><a href="#">Modern Slavery Statement</a></li>
+            </ul>
+          </div>
+          <div class="links">
+            <h4>Partners</h4>
+            <ul>
+              <li><a href="#">login</a></li>
+              <li><a href="#">Partner help</a></li>
+              <li><a href="#">List your property</a></li>
+              <li><a href="#">Become an affiliate</a></li>
+            </ul>
+          </div>
+          <div class="links">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">About StayEra.com</a></li>
+              <li><a href="#">How We Work</a></li>
+              <li><a href="#">Sustainability</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="bottom-section">
+          <p>&copy; 2025 StayEra.com™. All rights reserved.</p>
+        </div>
+      </div>
+      

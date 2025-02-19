@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='room.css') }}">
+        <title>Document</title>
+</head>
+<body>
+
+    {%extends "base.html"%}
+    {%block content%}
+
+    <div class="container">
+        <!-- Filters Section -->
+        <aside class="filters">
+            <h2>Filter & Sort</h2>
+        
+            <!-- Popular Filters -->
+            <h3>Popular filters</h3>
+            <label><input type="checkbox"> Mumbai (BOM-Chhatrapati Shivaji Intl.)</label>
+            <label><input type="checkbox" checked> Ocean view</label>
+            <label><input type="checkbox"> Breakfast included</label>
+            <label><input type="checkbox"> Aparthotel</label>
+            <label><input type="checkbox"> Hotel</label>
+        
+            <!-- Price Range -->
+            <h3>Price per night</h3>
+            <div class="price-inputs">
+                <input type="text" value="₹0" id="minPrice">
+                <input type="text" value="₹28,000+" id="maxPrice">
+            </div>
+            <input type="range" min="0" max="28000" value="28000" class="price-slider">
+        
+            <!-- Stay Options -->
+            <h3>Stay options</h3>
+            <label><input type="radio" name="stay" checked> Any</label>
+            <label><input type="radio" name="stay"> Hotels</label>
+            <label><input type="radio" name="stay"> Homes</label>
+
+                <!-- Popular Filters -->
+                <h3>Popular filters</h3>
+                <label><input type="checkbox"> Hotels <span class="count">682</span></label>
+                <label><input type="checkbox"> Breakfast included <span class="count">437</span></label>
+                <label><input type="checkbox"> Free cancellation <span class="count">897</span></label>
+                <label><input type="checkbox"> Very good: 8+ <span class="count">196</span></label>
+                <label><input type="checkbox"> Parking <span class="count">563</span></label>
+                <label><input type="checkbox"> Private bathroom <span class="count">810</span></label>
+                <label><input type="checkbox"> Swimming Pool <span class="count">64</span></label>
+                <label><input type="checkbox"> Pets allowed <span class="count">90</span></label>
+            
+                <!-- Facilities -->
+                <h3>Facilities</h3>
+                <label><input type="checkbox"> Parking <span class="count">563</span></label>
+                <label><input type="checkbox"> Restaurant <span class="count">215</span></label>
+                <label><input type="checkbox"> Pets allowed <span class="count">90</span></label>
+                <label><input type="checkbox"> Room service <span class="count">711</span></label>
+                <label><input type="checkbox"> 24-hour front desk <span class="count">741</span></label>
+                <a href="#" class="show-more">Show all 14 ▼</a>
+            
+                <!-- Property Type -->
+                <h3>Property type</h3>
+                <label><input type="checkbox"> Hotels <span class="count">682</span></label>
+                <label><input type="checkbox"> Entire homes & apartments <span class="count">182</span></label>
+                <label><input type="checkbox"> Apartments <span class="count">167</span></label>
+                <label><input type="checkbox"> Hostels <span class="count">86</span></label>
+            
+            
+        </aside>
+        
+
+        <!-- Hotel Listings -->
+        <main class="hotel-list">
+            <h2>Hotels in  Mumbai</h2>
+
+            {% for hotel in hotels %}
+            <div class="hotel">
+                <div class="hotel-image">
+                    <span class="badge">{{ hotel.badge }}</span>
+                    <img src="https://images.oyoroomscdn.com/uploads/hotel_image/104514/medium/xsttdivkaiht.jpg" alt="Hotel Image">
+                </div>
+
+                <div class="hotel-details">
+                    <h3>{{ hotel.name }}</h3>
+                    <p class="location">{{ hotel.location }} • {{ hotel.distance }}</p>
+                    <p class="rating">⭐ {{ hotel.rating }} ({{ hotel.reviews }} Ratings) • Very Good</p>
+
+                    <p class="features">
+                        {% for feature in hotel.features %}
+                        <span>✔ {{ feature }}</span>
+                        {% endfor %}
+                    </p>
+
+                    <p class="price">
+                        <span class="discounted">₹{{ hotel.discounted_price }}</span>
+                        <span class="original">₹{{ hotel.original_price }}</span> <span class="discount">68% off</span>
+                    </p>
+
+                    <p class="taxes">+ ₹{{ hotel.taxes_fees }} taxes & fees • per room per night</p>
+
+                    <div class="buttons">
+                        <button class="view">View Details</button>
+                        <a href="{{url_for('booking')}}" ><button class="book">Book Now</button></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </main>
+    </div>
+
+
+
+    {%endblock%}
+    
+</body>
+</html>

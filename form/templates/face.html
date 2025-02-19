@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face ID Scan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='face.css') }}">
+</head>
+<body>
+
+    <div class="booking-container">
+        <h2>Face I'd</h2>
+
+        <video id="cameraFeed" autoplay></video>
+        <button id="captureBtn">Capture ID</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <button id="scanBtn" style="display:none;">Scan ID</button>
+        <p id="message"></p>
+
+        <div id="extractedText"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.0.2/tesseract.min.js"></script>
+    <script src="{{ url_for('static', filename='js/face.js') }}"></script>
+    
+</body>
+</html>

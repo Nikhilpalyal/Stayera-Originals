@@ -1,0 +1,11 @@
+/* Styles for index.html */
+.hero-section { 
+    background-image: url('image/hero.jpg'); 
+    color: white;
+}
+
+/* Styles for about.html */
+.about-container {
+    background-color: #f4f4f4;
+    padding: 20px;
+}

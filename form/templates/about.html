@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+
+</head>
+<body>
+  {%extends "base.html"%}
+  {%block content%}
+  <section class="zero">
+    <div class="zero-overlay"></div>
+    <div class="zero-content">
+        <h1 class="zero-title">Find Your Home Away From Home.</h1>
+        <p class="zero-subtitle">Introducing Stayera: A New Vision of Hospitality.</p>
+        <a href="#" class="cta-button">Discover More</a>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="features-badge">Our Features</div>
+    <h1 class="h1">Insurance Provide you a <br> <span class="highlight">Better Future</span></h1>
+
+    <div class="features-container">
+        <div class="feature-box">
+            <div class="feature-icon">&#128221;</div>
+            <h3>Trusted Company</h3>
+            <p> A trusted hotel booking system ensures that customers can confidently make reservations without worrying about fraud, inaccurate listings, or poor service quality.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-icon">&#128181;</div>
+            <h3>Secure and easy booking</h3>
+            <p>Plans can change, and a flexible hotel booking system ensures that travelers have the freedom to modify their reservations without stress. Whether it's a last-minute change or an extended stay, flexibility is key to a smooth travel experience.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-icon">&#127919;</div>
+            <h3>Always Plan Flexibly</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit libero facilisis etiam ridiculus. With a secure and easy booking system, travelers can confidently reserve their stay in just a few clicks.</p>
+        </div>
+
+        <div class="feature-box">
+            <div class="feature-icon">&#128222;</div>
+            <h3>24/7 Fast Support</h3>
+            <p>24/7 customer support is essential for ensuring a seamless experience for guests. Whether they need assistance with booking a room, modifying reservations, or resolving last-minute issues.</p>
+        </div>
+    </div>
+</section>
+
+<section class="team-section">
+    <div class="team-header">
+        <p class="team-badge">Our Team</p>
+        <h2><span>Team</span> Members</h2>
+        <p class="team-description pp">
+            Meet our talented professionals who make everything possible.
+        </p>
+    </div>
+
+    <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+            <img src="../static/image/Natansh.jpg" alt="Natansh Mahajan">
+            <div class="team-info">
+                <h3>Natansh Mahajan</h3>
+                <p>Team Member</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/natansh-mahajan-287b19316/"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+            <img src="../static/image/me.jpg" alt="Nikhil Palyal">
+            <div class="team-info">
+                <h3>Nikhil Palyal</h3>
+                <p>TEAM MEMBER</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/nikhil-palyal-7413a7328/"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-card">
+            <img src="../static/image/Rudra.jpg" alt="Rudra">
+            <div class="team-info">
+                <h3>Rudra Arora</h3>
+                <p>TEAM MEMBER</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-card">
+            <img src="../static/image/radhika.jpg" alt="Radhika Sood">
+            <div class="team-info">
+                <h3>Radhika Sood</h3>
+                <p>TEAM MEMBER</p>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/radhika-sood-5bb82433b/"><i class="fa-brands fa-linkedin-in" style="color: #FFD43B;"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{%endblock%}
+
+
+</body>
+</html>

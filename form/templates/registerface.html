@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face ID Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='registerface.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register Your Face</h2>
+
+        <video id="cameraFeed" autoplay></video>
+        <button id="captureBtn">Capture Face</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <button id="registerBtn" style="display:none;">Register Face</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/registerface.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels | Stayera</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='hotels.css') }}">
+</head>
+<body>
+   
+    {%extends "base.html"%}
+    {%block content%}
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1 class="h1">Welcome to StayEra</h1>
+        <p class="p">The place where you're looking to stay, A home better than home</p>
+        <button class="explore-btn">Explore Now →</button>
+    </header>
+
+    <section class="booking-form">
+        <form>
+            <select>
+                <option>Select a room</option>
+                <option>Standard Room</option>
+                <option>Deluxe Room</option>
+                <option>Suite</option>
+            </select>
+            <input type="date" placeholder="Check-in">
+            <input type="date" placeholder="Check-out">
+            <input type="number" placeholder="Guests">
+           <button type="submit"> <a href="{{url_for('room')}}" >Book Now</a></button>
+        </form>
+    </section>
+
+    <section class="discover-stays">
+        <h1>Discover your new favorite stay</h1>
+        <div class="scroll-container">
+            <div class="scroll-content">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='image/scoll1.avif') }}" alt="All Inclusive">
+                    <p>All inclusive</p>
+
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='image/apartment.jpeg') }}" alt="Family Friendly">
+                    <p>Family friendly</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='image/appartments.webp') }}" alt="Apartment">
+                    <p>Apartment</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='image/hotel3.jpg') }}" alt="Spa">
+                    <p>Spa</p>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='image/resort.jpeg') }}" alt="Apart Hotel">
+                    <p>Villa</p>
+                </div>
+
+                <div class="card">
+                    <img src="{{ url_for('static', filename='image/room.jpg') }}" alt="Apart Hotel">
+                    <p>Rental rooms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <h2>Trending Destinations In India to visit</h2>
+    <div class="destinations-container">
+        {% for place in destinations %}
+        <div class="destination-card">
+           <a href="room"><img src="{{ url_for('static', filename=place.image) }}" alt="{{ place.name }}"></a>
+            <h3>{{ place.name }} </h3>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="rewards-container">
+        <h2>Travel more, spend less</h2>
+
+        <div class="rewards-grid">
+            <div class="reward-card genius-card">
+                <h3>Genius</h3>
+                <p> you're at <strong>Genius Level 1</strong> in our loyalty programme</p>
+            </div>
+
+            <!-- Rewards Cards -->
+            <div class="reward-card">
+                <h3>10% discounts on stays <span class="icon">💰</span></h3>
+                <p>Enjoy discounts at participating properties worldwide</p>
+            </div>
+
+            <div class="reward-card">
+                <h3>10% off rental cars <span class="icon">🚗</span></h3>
+                <p>Save on select rental cars</p>
+            </div>
+
+            <div class="reward-card">
+                <h3>10-15% discounts on stays <span class="icon">🔒</span></h3>
+                <p>Complete 5 bookings to unlock Genius Level 2</p>
+            </div>
+        </div>
+    </div>
+    
+
+      {%endblock%}
+      
+
+
+   </body>
+</html>
+
+<script src="{{ url_for('static', filename='hotels.js') }}"></script>
